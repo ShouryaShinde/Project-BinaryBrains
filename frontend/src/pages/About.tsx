@@ -23,8 +23,17 @@ const About = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-tight">
+      <section className="section-padding relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(/team-photo-bb.JPG)' }}
+        >
+          <div className="absolute inset-0 bg-background/70"></div>
+        </div>
+        
+        {/* Content */}
+        <div className="container-tight relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <span className="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
               About Us

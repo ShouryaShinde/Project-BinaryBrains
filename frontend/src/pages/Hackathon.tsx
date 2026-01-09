@@ -56,9 +56,16 @@ const Hackathon = () => {
               Competitive DSA Contest
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-foreground mb-6">
-              AlgoHeist <span className="gradient-text">2026</span>
-            </h1>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <img 
+                src="/algo-logo.png" 
+                alt="AlgoHeist Logo" 
+                className="h-16 md:h-20 object-contain drop-shadow-lg"
+              />
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-foreground">
+                AlgoHeist <span className="gradient-text">2026</span>
+              </h1>
+            </div>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
               Test your algorithmic prowess in our flagship coding competition. 

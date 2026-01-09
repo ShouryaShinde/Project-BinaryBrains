@@ -17,7 +17,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDark, setIsDark] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
-    return savedTheme === "dark" || (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    return savedTheme === "dark";
+  });
+  const [showDarkModeHint, setShowDarkModeHint] = useState(() => {
+    const hasSeenHint = localStorage.getItem("darkModeHintSeen");
+    const savedTheme = localStorage.getItem("theme");
+    return !hasSeenHint && savedTheme !== "dark";
   });
   const location = useLocation();
 
@@ -31,8 +36,27 @@ const Navbar = () => {
     }
   }, [isDark]);
 
+  useEffect(() => {
+    if (showDarkModeHint) {
+      const timer = setTimeout(() => {
+        setShowDarkModeHint(false);
+        localStorage.setItem("darkModeHintSeen", "true");
+      }, 8000); // Hide after 8 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [showDarkModeHint]);
+
   const toggleTheme = () => {
     setIsDark(!isDark);
+    if (showDarkModeHint) {
+      setShowDarkModeHint(false);
+      localStorage.setItem("darkModeHintSeen", "true");
+    }
+  };
+
+  const dismissHint = () => {
+    setShowDarkModeHint(false);
+    localStorage.setItem("darkModeHintSeen", "true");
   };
 
   return (
@@ -70,13 +94,33 @@ const Navbar = () => {
 
           {/* CTA Buttons and Theme Toggle */}
           <div className="hidden lg:flex items-center gap-3">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-muted transition-colors"
-              aria-label="Toggle theme"
-            >
-              {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </button>
+            <div className="relative">
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-lg hover:bg-muted transition-colors group"
+                aria-label="Toggle theme"
+                title={isDark ? "Switch to light mode" : "Switch to dark mode for better experience"}
+              >
+                {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              </button>
+              
+              {/* Animated hint - visible without hover */}
+              {showDarkModeHint && !isDark && (
+                <div className="absolute -bottom-20 right-0 flex flex-col items-end animate-fade-in">
+                  <div className="bg-primary text-primary-foreground text-sm px-4 py-2 rounded-lg shadow-lg whitespace-nowrap mb-2 relative">
+                    Try dark mode for better experience! ✨
+                    <button 
+                      onClick={dismissHint}
+                      className="ml-2 hover:opacity-70"
+                      aria-label="Dismiss"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                  <div className="text-primary text-3xl -mt-3 mr-2 animate-bounce">↑</div>
+                </div>
+              )}
+            </div>
             <Link to="/hackathon">
               <Button variant="hero" size="default">
                 Register Now
@@ -116,8 +160,13 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <div className="flex items-center justify-between px-4 py-3">
-                <span className="text-sm font-medium text-muted-foreground">Theme</span>
+              <div className="flex items-center justify-between px-4 py-3 relative">
+                <div className="flex flex-col">
+                  <span className="text-sm font-medium text-muted-foreground">Theme</span>
+                  {showDarkModeHint && !isDark && (
+                    <span className="text-xs text-primary mt-0.5 animate-pulse">Try dark mode for better experience ✨</span>
+                  )}
+                </div>
                 <button
                   onClick={toggleTheme}
                   className="p-2 rounded-lg hover:bg-muted transition-colors"
