@@ -201,7 +201,7 @@ const Hackathon = () => {
           </div>
 
           {/* Podium Design */}
-          <div className="flex items-end justify-center gap-3 md:gap-6 max-w-2xl mx-auto mb-8">
+          <div className="flex items-end justify-center gap-3 md:gap-6 max-w-2xl mx-auto mb-8 pt-10">
             {/* 2nd Place */}
             <div className="flex flex-col items-center">
               <div className="card-elevated p-4 md:p-6 text-center mb-2 w-24 md:w-32">
