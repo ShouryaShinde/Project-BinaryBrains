@@ -35,9 +35,16 @@ const tracks = [
 const Hackathon = () => {
   return (
     <Layout>
-      <div className="bg-[#0a0a0a] text-white">
+      <div className="relative overflow-hidden bg-[#0a0a0a] text-white">
+        {/* Global background glow for continuity */}
+        <div className="pointer-events-none absolute inset-0 z-0">
+          <div className="absolute top-0 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#FA7518]/10 blur-[140px]" />
+          <div className="absolute top-[35%] right-[8%] h-[280px] w-[280px] rounded-full bg-[#FA7518]/[0.05] blur-[120px]" />
+          <div className="absolute bottom-[10%] left-[5%] h-[260px] w-[260px] rounded-full bg-[#FA7518]/[0.05] blur-[120px]" />
+        </div>
+
         {/* Hero */}
-        <section className="relative min-h-screen overflow-hidden">
+        <section className="relative overflow-hidden min-h-[88vh]">
           <div className="absolute inset-0 z-0">
             <Silk
               speed={3}
@@ -48,11 +55,11 @@ const Hackathon = () => {
             />
           </div>
 
-          <div className="absolute inset-0 z-[1] bg-black/50" />
-          <div className="absolute inset-0 z-[2] bg-gradient-to-b from-black/60 via-black/40 to-[#0a0a0a]" />
-          <div className="absolute inset-0 z-[2] bg-[radial-gradient(circle_at_top,rgba(250,117,24,0.18),transparent_35%)]" />
+          <div className="absolute inset-0 z-[1] bg-black/55" />
+          <div className="absolute inset-0 z-[2] bg-gradient-to-b from-black/60 via-black/35 to-[#0a0a0a]" />
+          <div className="absolute inset-0 z-[2] bg-[radial-gradient(circle_at_top,rgba(250,117,24,0.22),transparent_34%)]" />
 
-          <div className="container-tight relative z-10 flex min-h-screen items-center py-24">
+          <div className="container-tight relative z-10 flex min-h-[88vh] items-center py-20 md:py-24">
             <div className="max-w-5xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-orange-500/30 bg-white/5 backdrop-blur-md text-sm font-medium text-orange-100 mb-6 shadow-[0_0_30px_rgba(250,117,24,0.12)]">
                 <Code2 className="h-4 w-4 text-[#FA7518]" />
@@ -68,14 +75,16 @@ const Hackathon = () => {
 
               <p className="text-base sm:text-lg md:text-xl text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed">
                 Test your algorithmic prowess in our flagship coding competition.
-                Solve brutal problems, outthink the competition, and fight for the top spot.
+                Solve hard problems, outthink the competition, and earn your place at the top.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-10">
                 <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl px-5 py-4 text-left shadow-[0_10px_40px_rgba(0,0,0,0.25)]">
                   <div className="flex items-center gap-2 text-[#FA7518] mb-2">
                     <Calendar className="h-5 w-5" />
-                    <span className="text-sm font-semibold uppercase tracking-wide">Date</span>
+                    <span className="text-sm font-semibold uppercase tracking-wide">
+                      Date
+                    </span>
                   </div>
                   <p className="text-white font-medium">21st - 28th February 2026</p>
                 </div>
@@ -83,7 +92,9 @@ const Hackathon = () => {
                 <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl px-5 py-4 text-left shadow-[0_10px_40px_rgba(0,0,0,0.25)]">
                   <div className="flex items-center gap-2 text-[#FA7518] mb-2">
                     <MapPin className="h-5 w-5" />
-                    <span className="text-sm font-semibold uppercase tracking-wide">Venue</span>
+                    <span className="text-sm font-semibold uppercase tracking-wide">
+                      Venue
+                    </span>
                   </div>
                   <p className="text-white font-medium">DIT Pune Campus</p>
                 </div>
@@ -91,7 +102,9 @@ const Hackathon = () => {
                 <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl px-5 py-4 text-left shadow-[0_10px_40px_rgba(0,0,0,0.25)]">
                   <div className="flex items-center gap-2 text-[#FA7518] mb-2">
                     <Clock className="h-5 w-5" />
-                    <span className="text-sm font-semibold uppercase tracking-wide">Duration</span>
+                    <span className="text-sm font-semibold uppercase tracking-wide">
+                      Duration
+                    </span>
                   </div>
                   <p className="text-white font-medium">5.5 Hours Total</p>
                 </div>
@@ -122,7 +135,7 @@ const Hackathon = () => {
         </section>
 
         {/* Event Format */}
-        <section className="py-14 md:py-20 bg-black border-t border-white/5">
+        <section className="relative z-10 py-14 md:py-18 border-t border-white/5">
           <div className="container-tight">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
@@ -140,7 +153,9 @@ const Hackathon = () => {
                     <Laptop className="h-6 w-6 text-[#FA7518]" />
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-xl text-white">Round 1</h3>
+                    <h3 className="font-display font-bold text-xl text-white">
+                      Round 1
+                    </h3>
                     <p className="text-sm text-white/60">Preliminary Round</p>
                   </div>
                 </div>
@@ -167,7 +182,9 @@ const Hackathon = () => {
                     <Trophy className="h-6 w-6 text-[#FA7518]" />
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-xl text-white">Round 2</h3>
+                    <h3 className="font-display font-bold text-xl text-white">
+                      Round 2
+                    </h3>
                     <p className="text-sm text-white/60">Final Round</p>
                   </div>
                 </div>
@@ -192,7 +209,7 @@ const Hackathon = () => {
         </section>
 
         {/* Problem Tracks */}
-        <section className="py-14 md:py-20 bg-black border-t border-white/5">
+        <section className="relative z-10 py-14 md:py-18 border-t border-white/5">
           <div className="container-tight">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
@@ -215,7 +232,7 @@ const Hackathon = () => {
         </section>
 
         {/* Prizes */}
-        <section className="py-14 md:py-20 bg-black border-t border-white/5">
+        <section className="relative z-10 py-14 md:py-18 border-t border-white/5">
           <div className="container-tight">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
@@ -228,54 +245,63 @@ const Hackathon = () => {
             </div>
 
             <div className="flex items-end justify-center gap-3 md:gap-6 max-w-2xl mx-auto mb-8 pt-10">
-              {/* 2nd */}
               <div className="flex flex-col items-center">
                 <div className="rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-md p-4 md:p-6 text-center mb-2 w-24 md:w-32 shadow-[0_12px_40px_rgba(0,0,0,0.28)]">
                   <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-slate-300 to-slate-400 flex items-center justify-center mx-auto mb-2 shadow-lg">
                     <Trophy className="h-6 w-6 md:h-7 md:w-7 text-white" />
                   </div>
-                  <h3 className="text-lg md:text-xl font-display font-bold text-white">2nd</h3>
+                  <h3 className="text-lg md:text-xl font-display font-bold text-white">
+                    2nd
+                  </h3>
                   <div className="flex items-center justify-center gap-1 text-white/60">
                     <HelpCircle className="h-4 w-4" />
                     <span className="text-sm">Hidden</span>
                   </div>
                 </div>
                 <div className="w-24 md:w-32 h-20 md:h-28 bg-gradient-to-t from-slate-400 to-slate-300 rounded-t-lg flex items-center justify-center shadow-lg">
-                  <span className="text-3xl md:text-4xl font-display font-bold text-white/90">2</span>
+                  <span className="text-3xl md:text-4xl font-display font-bold text-white/90">
+                    2
+                  </span>
                 </div>
               </div>
 
-              {/* 1st */}
               <div className="flex flex-col items-center -mt-6 md:-mt-8">
                 <div className="rounded-3xl border border-[#FA7518]/40 bg-white/[0.05] backdrop-blur-md p-4 md:p-6 text-center mb-2 w-28 md:w-36 shadow-[0_0_40px_rgba(250,117,24,0.12)]">
                   <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center mx-auto mb-2 shadow-lg ring-4 ring-yellow-400/30">
                     <Trophy className="h-7 w-7 md:h-8 md:w-8 text-white" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-display font-bold text-white">1st</h3>
+                  <h3 className="text-xl md:text-2xl font-display font-bold text-white">
+                    1st
+                  </h3>
                   <div className="flex items-center justify-center gap-1 text-white/60">
                     <HelpCircle className="h-4 w-4" />
                     <span className="text-sm">Hidden</span>
                   </div>
                 </div>
                 <div className="w-28 md:w-36 h-28 md:h-36 bg-gradient-to-t from-amber-500 to-yellow-400 rounded-t-lg flex items-center justify-center shadow-lg">
-                  <span className="text-4xl md:text-5xl font-display font-bold text-white/90">1</span>
+                  <span className="text-4xl md:text-5xl font-display font-bold text-white/90">
+                    1
+                  </span>
                 </div>
               </div>
 
-              {/* 3rd */}
               <div className="flex flex-col items-center">
                 <div className="rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-md p-4 md:p-6 text-center mb-2 w-24 md:w-32 shadow-[0_12px_40px_rgba(0,0,0,0.28)]">
                   <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-orange-300 to-orange-400 flex items-center justify-center mx-auto mb-2 shadow-lg">
                     <Trophy className="h-6 w-6 md:h-7 md:w-7 text-white" />
                   </div>
-                  <h3 className="text-lg md:text-xl font-display font-bold text-white">3rd</h3>
+                  <h3 className="text-lg md:text-xl font-display font-bold text-white">
+                    3rd
+                  </h3>
                   <div className="flex items-center justify-center gap-1 text-white/60">
                     <HelpCircle className="h-4 w-4" />
                     <span className="text-sm">Hidden</span>
                   </div>
                 </div>
                 <div className="w-24 md:w-32 h-16 md:h-24 bg-gradient-to-t from-orange-400 to-orange-300 rounded-t-lg flex items-center justify-center shadow-lg">
-                  <span className="text-3xl md:text-4xl font-display font-bold text-white/90">3</span>
+                  <span className="text-3xl md:text-4xl font-display font-bold text-white/90">
+                    3
+                  </span>
                 </div>
               </div>
             </div>
@@ -287,7 +313,7 @@ const Hackathon = () => {
         </section>
 
         {/* Timeline */}
-        <section className="py-14 md:py-20 bg-black border-t border-white/5">
+        <section className="relative z-10 py-14 md:py-18 border-t border-white/5">
           <div className="container-tight">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
@@ -297,10 +323,13 @@ const Hackathon = () => {
 
             <div className="max-w-3xl mx-auto">
               <div className="relative">
-                <div className="absolute left-6 md:left-8 top-0 bottom-24 w-px bg-gradient-to-b from-[#FA7518] via-[#FA7518]/40 to-transparent" />
+                <div className="absolute left-6 md:left-8 top-0 bottom-12 w-px bg-gradient-to-b from-[#FA7518] via-[#FA7518]/40 to-transparent" />
 
                 {timeline.map((item, index) => (
-                  <div key={item.phase} className="relative flex gap-6 md:gap-8 pb-8 last:pb-0">
+                  <div
+                    key={item.phase}
+                    className="relative flex gap-6 md:gap-8 pb-8 last:pb-0"
+                  >
                     <div className="relative z-10 flex-shrink-0">
                       <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-black border-4 border-[#FA7518] flex items-center justify-center shadow-[0_0_20px_rgba(250,117,24,0.18)]">
                         <span className="text-lg md:text-xl font-bold text-[#FA7518]">
@@ -326,7 +355,7 @@ const Hackathon = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-14 md:py-20 bg-[#0a0a0a] border-t border-white/5">
+        <section className="relative z-10 py-14 md:py-20 border-t border-white/5">
           <div className="container-tight">
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] backdrop-blur-xl p-8 md:p-12 text-center shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(250,117,24,0.18),transparent_45%)]" />

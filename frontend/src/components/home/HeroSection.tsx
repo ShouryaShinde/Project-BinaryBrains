@@ -1,26 +1,18 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import LightRays from "../LightRays";
-import { ArrowRight, Code2, Users, Trophy } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Aurora from "../Aurora";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-black flex items-center">
       {/* Light Rays Background */}
       <div className="absolute inset-0 z-0">
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="#F87014"
-          raysSpeed={1}
-          lightSpread={1.2}
-          rayLength={8}
-          followMouse={true}
-          mouseInfluence={0.15}
-          noiseAmount={0}
-          distortion={0}
-          pulsating={false}
-          fadeDistance={2}
-          saturation={1}
+        <Aurora
+          colorStops={["#F87014", "#B19EEF", "#F87014"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={1}
         />
       </div>
 
@@ -45,14 +37,15 @@ const HeroSection = () => {
             Binary Brains
             <br />
             <span className="text-[#F87014] drop-shadow-[0_0_18px_rgba(248,112,20,0.30)]">
-              Creating Impact.
+              Build. Learn. Lead.
             </span>
           </h1>
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-white/65 max-w-2xl mx-auto mb-10 leading-relaxed">
-            BinaryBrains brings together ambitious builders, problem solvers, and creators
-            through hackathons, workshops, technical sessions, and real execution.
+            A student-led tech community at DIT Pune where developers, designers,
+            and problem solvers come together to build projects, host events,
+            compete in hackathons, and grow through real collaboration.
           </p>
 
           {/* CTA Buttons */}
@@ -77,33 +70,6 @@ const HeroSection = () => {
               </Button>
             </Link>
           </div>
-
-          {/* Stats */}
-          {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 shadow-[0_10px_40px_rgba(0,0,0,0.25)]">
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#F87014]/10 text-[#F87014] mx-auto mb-4 border border-[#F87014]/20">
-                <Users className="h-6 w-6" />
-              </div>
-              <div className="text-3xl font-display font-bold text-white">500+</div>
-              <div className="text-sm text-white/50 mt-1">Active Members</div>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 shadow-[0_10px_40px_rgba(0,0,0,0.25)]">
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#F87014]/10 text-[#F87014] mx-auto mb-4 border border-[#F87014]/20">
-                <Code2 className="h-6 w-6" />
-              </div>
-              <div className="text-3xl font-display font-bold text-white">50+</div>
-              <div className="text-sm text-white/50 mt-1">Events Organized</div>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-6 shadow-[0_10px_40px_rgba(0,0,0,0.25)]">
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#F87014]/10 text-[#F87014] mx-auto mb-4 border border-[#F87014]/20">
-                <Trophy className="h-6 w-6" />
-              </div>
-              <div className="text-3xl font-display font-bold text-white">20+</div>
-              <div className="text-sm text-white/50 mt-1">Hackathon Wins</div>
-            </div>
-          </div> */}
         </div>
       </div>
     </section>
