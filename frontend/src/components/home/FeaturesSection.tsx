@@ -62,16 +62,16 @@ const features: Feature[] = [
     className: "xl:col-span-2",
     glowClass: "from-emerald-500/18 via-emerald-500/6 to-transparent",
   },
-  {
-    icon: Users,
-    title: "Open Source",
-    description:
-      "Contribute to real-world projects and build your portfolio with meaningful contributions.",
-    label: "Community",
-    highlights: ["Real projects", "Portfolio depth", "Collaboration"],
-    className: "xl:col-span-2",
-    glowClass: "from-sky-500/18 via-sky-500/6 to-transparent",
-  },
+  // {
+  //   icon: Users,
+  //   title: "Open Source",
+  //   description:
+  //     "Contribute to real-world projects and build your portfolio with meaningful contributions.",
+  //   label: "Community",
+  //   highlights: ["Real projects", "Portfolio depth", "Collaboration"],
+  //   className: "xl:col-span-2",
+  //   glowClass: "from-sky-500/18 via-sky-500/6 to-transparent",
+  // },
   {
     icon: Zap,
     title: "Hackathons",
@@ -86,7 +86,7 @@ const features: Feature[] = [
 
 const FeaturesSection = () => {
   return (
-    <section className="relative overflow-hidden bg-black py-16 md:py-24">
+    <section className="relative overflow-hidden bg-black pt-16 md:py-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(248,112,20,0.16),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(248,112,20,0.08),transparent_28%)]" />
       <div className="absolute inset-0 opacity-[0.06] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:64px_64px]" />
 
