@@ -94,9 +94,8 @@ const Footer = () => {
       </div>
 
       {/* Bottom bar */}
-      <div className="relative z-10 mx-auto flex w-full max-w-screen-xl flex-col gap-3 border-t border-white/10 px-4 py-4 text-sm text-white/60 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
-        <span>Copyright 2026 BinaryBrains DIT. All rights reserved.</span>
-        <span className="text-white/50">Made with orange by the BinaryBrains Team</span>
+      <div className="relative z-10  mx-auto flex w-full max-w-screen-xl flex-col gap-3 border-t border-white/10 px-4 py-4 text-sm text-white/60 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+        <span>Copyright 2026 BinaryBrains DIT. All rights reserved.</span>        
 
         <div className="flex flex-wrap gap-4 sm:gap-6">
           <a
