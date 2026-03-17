@@ -111,15 +111,16 @@ const Hackathon = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href = "https://unstop.com/hackathons/algoheist-2026-ultimate-dsa-showdown-dr-dy-patil-institute-of-technology-1658552" >
                 <Button
                   size="xl"
                   className="bg-[#FA7518] text-white hover:bg-[#e96a14] border border-[#FA7518]/60 shadow-[0_0_30px_rgba(250,117,24,0.35)]"
                   id="register"
-                >
-                  Register Now
+                > 
+                Register Now
                   <ArrowRight className="h-5 w-5" />
                 </Button>
-
+                </a>
                 <Link to="/sponsors">
                   <Button
                     size="xl"
@@ -366,13 +367,15 @@ const Hackathon = () => {
                 <p className="text-white/70 mb-6 max-w-xl mx-auto">
                   Register now and compete with the best programmers. Limited spots available.
                 </p>
+                <a href="https://unstop.com/hackathons/algoheist-2026-ultimate-dsa-showdown-dr-dy-patil-institute-of-technology-1658552">
                 <Button
                   size="xl"
                   className="bg-[#FA7518] text-white hover:bg-[#e96a14] shadow-[0_0_30px_rgba(250,117,24,0.3)]"
-                >
+                > 
                   Register Now
                   <ArrowRight className="h-5 w-5" />
                 </Button>
+                </a>
               </div>
             </div>
           </div>
