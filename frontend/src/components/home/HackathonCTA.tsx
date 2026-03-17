@@ -8,7 +8,7 @@ const HackathonCTA = () => {
       {/* Background effects */}
 
       <div className="container-tight relative z-10">
-        <div className="relative overflow-hidden rounded-[2rem]backdrop-blur-xl p-8 md:p-12 lg:p-16 text-center shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+        <div className="relative overflow-hidden rounded-[2rem] backdrop-blur-xl p-8 md:p-12 lg:p-16 text-center shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
           {/* inner glow */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(248,112,20,0.12),transparent_40%)] pointer-events-none" />
 
